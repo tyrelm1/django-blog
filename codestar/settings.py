@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-rm&l_@2q(s9dx968+rcowz-hodd%)y_y#xx5+#n_^j1x%=4y8f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 ALLOWED_HOSTS = ['8000-tyrelm1-djangoblog-stbbj06oirw.ws-eu108.gitpod.io',
-                 '.herokuapp.com',
+                 '.herokuapp.com'
                 ]
 
 
@@ -86,10 +86,15 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 #  }
 #}
 
-
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.8000-tyrelm1-djangoblog-stbbj06oirw.ws-eu108.gitpod.io",
+    "https://*.herokuapp.com"
+]
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
